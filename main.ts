@@ -40,7 +40,7 @@ serve(async (req: Request) => {
     }
   );
 
-  return Response(jsonFeedToRss({
+  return new Response(jsonFeedToRss({
     version: "https://jsonfeed.org/version/1",
     title: `Bandcamp: ${artist}`,
     home_page_url: `https://${artist}.bandcamp.com`,
