@@ -41,7 +41,7 @@ serve(async (req: Request) => {
   );
 
   return Response(jsonFeedToRss({
-    version: "https://jsonfeed.org/version/1.1",
+    version: "https://jsonfeed.org/version/1",
     title: `Bandcamp: ${artist}`,
     home_page_url: `https://${artist}.bandcamp.com`,
     feed_url: `https://rss-bandcamp.deno.dev?artist=${artist}`,
