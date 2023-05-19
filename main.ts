@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.155.0/http/server.ts";
 import { DOMParser } from "https://esm.sh/linkedom@0.14.16";
+import jsonFeedToRss from "https://esm.sh/jsonfeed-to-rss@3.0.7";
 
 serve(async (req: Request) => {
   const url = new URL(req.url);
@@ -39,12 +40,12 @@ serve(async (req: Request) => {
     }
   );
 
-  return Response.json({
+  return Response(jsonFeedToRss({
     version: "https://jsonfeed.org/version/1.1",
     title: `Bandcamp: ${artist}`,
     home_page_url: `https://${artist}.bandcamp.com`,
     feed_url: `https://rss-bandcamp.deno.dev?artist=${artist}`,
     favicon: "https://s4.bcbits.com/img/favicon/apple-touch-icon.png",
     items,
-  });
+  }));
 });
