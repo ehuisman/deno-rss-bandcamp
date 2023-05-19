@@ -44,7 +44,7 @@ serve(async (req: Request) => {
     version: "https://jsonfeed.org/version/1",
     title: `Bandcamp: ${artist}`,
     home_page_url: `https://${artist}.bandcamp.com`,
-    feed_url: `https://rss-bandcamp.deno.dev?artist=${artist}`,
+    feed_url: `https://bandcamp-rss.deno.dev?artist=${artist}`,
     favicon: "https://s4.bcbits.com/img/favicon/apple-touch-icon.png",
     items,
   }));
